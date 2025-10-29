@@ -23,19 +23,14 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Cache npm
-        uses: actions/cache@v4
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ matrix.node-version }}-${{ hashFiles('**/package.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-${{ matrix.node-version }}-
-
       - name: Install dependencies
         run: npm install
 
-      - name: Lint
+      - name: Run EsLint
         run: npm run lint
+
+      - name: Run tests
+        run: npm test
 
       - name: Build
         run: npm run build
