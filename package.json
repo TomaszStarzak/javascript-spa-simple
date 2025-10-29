@@ -1,6 +1,7 @@
 {
   "name": "spa-vanillajs",
   "version": "1.0.0",
+  "type": "module",
   "description": "",
   "main": "src/main.js",
   "scripts": {
@@ -8,7 +9,8 @@
     "start": "webpack serve --config ./webpack/webpack.config.js --env env=dev --open",
     "clean": "rimraf dist",
     "lint": "eslint \"src/**/*.js\"",
-    "lint:fix": "eslint \"src/**/*.js\" --fix"
+    "lint:fix": "eslint \"src/**/*.js\" --fix",
+    "test": "node --test"
   },
   "keywords": [],
   "author": "",
