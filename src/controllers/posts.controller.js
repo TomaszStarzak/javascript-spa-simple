@@ -1,15 +1,15 @@
 import view from '../view/posts.html';
 
 const getPosts = async () => {
-  const response = await fetch("https://jsonplaceholder.typicode.com/posts");
+  const response = await fetch('https://jsonplaceholder.typicode.com/posts');
   return await response.json();
 };
 
 export default async () => {
-  const divElement = document.createElement("div");
+  const divElement = document.createElement('div');
   divElement.innerHTML = view;
 
-  const postsElement = divElement.querySelector("#posts");
+  const postsElement = divElement.querySelector('#posts');
   const totalPosts = divElement.querySelector('#total');
 
   const posts = await getPosts();
